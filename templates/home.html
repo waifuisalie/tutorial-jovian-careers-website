@@ -9,20 +9,28 @@
             #banner {
                 height: 360px;
                 width: 100%;
+                margin-bottom: 16px;
             }
         </style>
     </head>
     <body>
+        {% include 'nav.html' %}
+        <img class="img-fluid" id="banner" src="/static/pepe_mc.jpg" height="320" alt="">
         <div class="container">
             <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-            <img class="img-fluid" id="banner" src="/static/pepe_mc.jpg" height="320" alt="">
-            <h2 class="text-center mt-2 mb-4">About Jovian</h2>
-            <p class="lead">Lorem ipsum dolor sit amet. Ea animi unde et voluptas omnis sit pariatur soluta et dolorum maiores. Qui beatae architecto id corporis officiis quo atque voluptates et recusandae veritatis et fugiat incidunt nam suscipit fugiat. Sit deserunt deserunt et sapiente quos ea harum numquam ut dolor praesentium sed autem consequuntur est rerum nihil.
+            <div class="row" style="margin-bottom: 16px;">
+                <div class="col-md-6">
+                    <p class="lead">Lorem ipsum dolor sit amet. Ea animi unde et voluptas omnis sit pariatur soluta et dolorum maiores. Qui beatae architecto id corporis officiis quo atque voluptates et recusandae veritatis et fugiat incidunt nam suscipit fugiat. Sit deserunt deserunt et sapiente quos ea harum numquam ut dolor praesentium sed autem consequuntur est rerum nihil.
 
-                Ad maiores doloribus ut consectetur quae qui similique quaerat. Ut voluptatum fugiat ad voluptatem quia sit molestias exercitationem qui debitis laboriosam et inventore maxime in modi omnis. Ea delectus rerum ut quia dolorem ea enim unde eum perspiciatis nemo et maiores nihil non galisum totam. Et vero eius aut doloribus architecto qui voluptates neque.
-                
-                Id delectus sapiente ea exercitationem obcaecati ut autem molestias? In rerum accusamus aut dicta quas et incidunt consequuntur?
-            </p>
+                        Ad maiores doloribus ut consectetur quae qui similique quaerat. Ut voluptatum fugiat ad voluptatem quia sit molestias exercitationem qui debitis laboriosam et inventore maxime in modi omnis. Ea delectus rerum ut quia dolorem ea enim unde eum perspiciatis nemo et maiores nihil non galisum totam. Et vero eius aut doloribus architecto qui voluptates neque.
+                        
+                        Id delectus sapiente ea exercitationem obcaecati ut autem molestias? In rerum accusamus aut dicta quas et incidunt consequuntur?
+                    </p>
+                </div>
+                <div class="d-none d-md-block col-md-6">
+                    <img src="/static/ppl_working_fr_i_stole.png" style="height: 320px; border-radius: 4px;">
+                </div>
+            </div>
             <h2 class="text-center">Open Positions</h2>
             <div>
                 {% for job in jobs %}
@@ -30,9 +38,9 @@
                 {% endfor %}
             </div>
             <div class="text-center">
-                <button class="btn btn-primary btn-lg">contact us</button>
-                <p class="mt-4">Copyright 2022, Jovian</p>
+                <a href="mailto:hello@jovian.ai?subject=Question%20about%20Job%20Openings&body=My%20name%3A%20%3CYour%20name%20here%3E%0D%0A%0D%0AMy%20question%3A%20%3CYour%20question%20here%3E" class="btn btn-primary btn-lg">contact us</a>
             </div>
         </div>
+        {% include 'footer.html' %}
     </body>
 </html>
