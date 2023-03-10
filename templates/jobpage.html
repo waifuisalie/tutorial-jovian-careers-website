@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{job[0]['title']}} - Jovian Careers</title>
+        <title>{{job['title']}} - Jovian Careers</title>
+        {% include 'bootstrap.html' %}
     </head>
     <body>
-        <h3>Title</h3>
-        <p>{{job[0]['title']}}</p>
+        {% include 'nav.html' %}
+        {% include 'banner.html' %}
+        <div class="container">
+            <h1 class="text-center mt-2 mb-4">Jovian Careers</h1>
+            <h3 class="mb-2">{{job['title']}}</h3>
+            <p class="lead mt-0">{{job['location']}}</p>
+            <h4>Responsibilities</h4>
+            <ul>
+                {% for line in job['responsabilities'].split(".") %}
+                <li>{{line}}</li>
+                {% endfor %}
+            </ul>
+            <h4>Requirements</h4>
+            <ol>
+                {% for line in job['requirements'].split('.') %}
+                <li>{{line}}</li>
+                {% endfor %}
+            </ol>
+            <p>{{job['requirements']}}</p>
+            <h4>Salary</h4>
+            <p>{{job['currency']}}{{job['salary']}}</p>
+        </div>
+
+        {% include 'footer.html' %}
     </body>
 </html>
