@@ -17,6 +17,13 @@ def list_jobs():
     jobs = load_jobs_from_db()
     return jsonify(jobs)
 
+@app.route('/api/job/<id>')
+def show_job_json(id):
+    data_fetch = load_job_from_db(id)
+    job = data_fetch[0]
+    return jsonify(job)
+
+
 @app.route('/job/<id>')
 def show_job(id):
     data_fetch = load_job_from_db(id)
