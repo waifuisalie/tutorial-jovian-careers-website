@@ -23,11 +23,10 @@
                 <li>{{line}}</li>
                 {% endfor %}
             </ol>
-            <p>{{job['requirements']}}</p>
             <h4>Salary</h4>
             <p>{{job['currency']}}{{job['salary']}}</p>
+            {% include 'form_application.html' %}
         </div>
-
         {% include 'footer.html' %}
     </body>
 </html>
